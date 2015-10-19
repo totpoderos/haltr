@@ -85,8 +85,7 @@ module Haltr
           xpaths[:attach_data]                  = "AttachmentData"
 
           xpaths[:extra_info]         = "//Invoices/Invoice/AdditionalData/InvoiceAdditionalInformation"
-          xpaths[:charge]             = "//Invoices/Invoice/InvoiceTotals/GeneralSurcharges/Charge/ChargeAmount"
-          xpaths[:charge_reason]      = "//Invoices/Invoice/InvoiceTotals/GeneralSurcharges/Charge/ChargeReason"
+          xpaths[:charges]            = "//Invoices/Invoice/InvoiceTotals/GeneralSurcharges/*"
           xpaths[:accounting_cost]    = "//Parties/BuyerParty/LegalEntity/ContactDetails/ContactPersons"
 
           xpaths[:to_be_debited]      = "//Invoices/Invoice/PaymentDetails/Installment/AccountToBeDebited"
@@ -125,9 +124,9 @@ module Haltr
           xpaths[:line_discount_amount]  = "DiscountAmount"
           xpaths[:line_discount_percent] = "DiscountRate"
           xpaths[:line_discount_text]    = "DiscountReason"
-          # relative to invoice_lines/charges
-          xpaths[:line_charge]        = "ChargeAmount"
-          xpaths[:line_charge_reason] = "ChargeReason"
+          # relative to GeneralSurcharges and invoice_lines/charges
+          xpaths[:charge]                = "ChargeAmount"
+          xpaths[:charge_reason]         = "ChargeReason"
           # relative to invoice_lines/taxes
           xpaths[:tax_id]             = "TaxTypeCode"
           xpaths[:tax_percent]        = "TaxRate"

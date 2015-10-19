@@ -1,0 +1,250 @@
+<?xml version="1.0" encoding="ISO-8859-1" ?>
+<m:Facturae xmlns:m="http://www.facturae.es/Facturae/2009/v3.2/Facturae">
+  <FileHeader>
+    <SchemaVersion>3.2</SchemaVersion>
+    <Modality>I</Modality>
+    <InvoiceIssuerType>RE</InvoiceIssuerType>
+    <Batch>
+      <BatchIdentifier>77310058C-163-FV</BatchIdentifier>
+      <InvoicesCount>1</InvoicesCount>
+      <TotalInvoicesAmount>
+        <TotalAmount>            1644.58</TotalAmount>
+      </TotalInvoicesAmount>
+      <TotalOutstandingAmount>
+        <TotalAmount>            1644.58</TotalAmount>
+      </TotalOutstandingAmount>
+      <TotalExecutableAmount>
+        <TotalAmount>            1644.58</TotalAmount>
+      </TotalExecutableAmount>
+      <InvoiceCurrencyCode>EUR</InvoiceCurrencyCode>
+    </Batch>
+  </FileHeader>
+  <Parties>
+    <SellerParty>
+      <TaxIdentification>
+        <PersonTypeCode>J</PersonTypeCode>
+        <ResidenceTypeCode>R</ResidenceTypeCode>
+        <TaxIdentificationNumber>77310058C</TaxIdentificationNumber>
+      </TaxIdentification>
+      <LegalEntity>
+        <CorporateName>Company, S.L.</CorporateName>
+        <AddressInSpain>
+          <Address>CL STREET NAME 65</Address>
+          <PostCode>28037</PostCode>
+          <Town>EDIFICIO A PLANTA 3ª</Town>
+          <Province>MADRID</Province>
+          <CountryCode>ESP</CountryCode>
+        </AddressInSpain>
+      </LegalEntity>
+    </SellerParty>
+    <BuyerParty>
+      <TaxIdentification>
+        <PersonTypeCode>F</PersonTypeCode>
+        <ResidenceTypeCode>R</ResidenceTypeCode>
+        <TaxIdentificationNumber>ESA13585625</TaxIdentificationNumber>
+      </TaxIdentification>
+      <Individual>
+        <Name>251161</Name>
+        <FirstSurname>251161</FirstSurname>
+        <SecondSurname></SecondSurname>
+        <AddressInSpain>
+          <Address>CL MADRID 25</Address>
+          <PostCode>28005</PostCode>
+          <Town>MADRID</Town>
+          <Province>MADRID</Province>
+          <CountryCode>ESP</CountryCode>
+        </AddressInSpain>
+      </Individual>
+    </BuyerParty>
+  </Parties>
+  <Invoices>
+    <Invoice>
+      <InvoiceHeader>
+        <InvoiceNumber>0001/FV/163/15</InvoiceNumber>
+        <InvoiceSeriesCode>FV</InvoiceSeriesCode>
+        <InvoiceDocumentType>FC</InvoiceDocumentType>
+        <InvoiceClass>OO</InvoiceClass>
+      </InvoiceHeader>
+      <InvoiceIssueData>
+        <IssueDate>2015-10-06</IssueDate>
+        <InvoiceCurrencyCode>EUR</InvoiceCurrencyCode>
+        <TaxCurrencyCode>EUR</TaxCurrencyCode>
+        <LanguageName>es</LanguageName>
+      </InvoiceIssueData>
+      <TaxesOutputs>
+        <Tax>
+          <TaxTypeCode>01</TaxTypeCode>
+          <TaxRate>              21.00</TaxRate>
+          <TaxableBase>
+            <TotalAmount>              93.64</TotalAmount>
+          </TaxableBase>
+          <TaxAmount>
+            <TotalAmount>              19.66</TotalAmount>
+          </TaxAmount>
+        </Tax>
+        <Tax>
+          <TaxTypeCode>01</TaxTypeCode>
+          <TaxRate>              10.00</TaxRate>
+          <TaxableBase>
+            <TotalAmount>            1392.07</TotalAmount>
+          </TaxableBase>
+          <TaxAmount>
+            <TotalAmount>             139.21</TotalAmount>
+          </TaxAmount>
+        </Tax>
+      </TaxesOutputs>
+      <InvoiceTotals>
+        <TotalGrossAmount>            1442.40</TotalGrossAmount>
+        <GeneralDiscounts>
+          <Discount>
+            <DiscountReason>DESC.AGEN.1234567890</DiscountReason>
+            <DiscountAmount>              72.120000</DiscountAmount>
+          </Discount>
+          <Discount>
+            <DiscountReason>DESCUENTO PRONTO PAGO</DiscountReason>
+            <DiscountAmount>              13.700000</DiscountAmount>
+          </Discount>
+        </GeneralDiscounts>
+        <GeneralSurcharges>
+          <Charge>
+            <ChargeReason>TRANSPORTES</ChargeReason>
+            <ChargeAmount>             100.000000</ChargeAmount>
+          </Charge>
+          <Charge>
+            <ChargeReason>RECARGO FINANCIERO</ChargeReason>
+            <ChargeAmount>              29.130000</ChargeAmount>
+          </Charge>
+        </GeneralSurcharges>
+        <TotalGeneralDiscounts>              85.82</TotalGeneralDiscounts>
+        <TotalGeneralSurcharges>             129.13</TotalGeneralSurcharges>
+        <TotalGrossAmountBeforeTaxes>            1485.71</TotalGrossAmountBeforeTaxes>
+        <TotalTaxOutputs>             158.87</TotalTaxOutputs>
+        <TotalTaxesWithheld>               0.00</TotalTaxesWithheld>
+        <InvoiceTotal>            1644.58</InvoiceTotal>
+        <TotalOutstandingAmount>            1644.58</TotalOutstandingAmount>
+        <TotalExecutableAmount>            1644.58</TotalExecutableAmount>
+      </InvoiceTotals>
+      <Items>
+        <InvoiceLine>
+          <ItemDescription>SOLOMILLO</ItemDescription>
+          <Quantity>              10.000</Quantity>
+          <UnitOfMeasure>03</UnitOfMeasure>
+          <UnitPriceWithoutTax>              10.100000</UnitPriceWithoutTax>
+          <TotalCost>             101.000000</TotalCost>
+          <DiscountsAndRebates>
+            <Discount>
+              <DiscountReason>DESC.AGEN.1234567890</DiscountReason>
+              <DiscountAmount>              10.100000</DiscountAmount>
+            </Discount>
+          </DiscountsAndRebates>
+          <Charges>
+            <Charge>
+              <ChargeReason>carrec1 linia1</ChargeReason>
+              <ChargeAmount>10.000000</ChargeAmount>
+            </Charge>
+            <Charge>
+              <ChargeReason>carrec2 linia1</ChargeReason>
+              <ChargeAmount>12.000000</ChargeAmount>
+            </Charge>
+          </Charges>
+          <GrossAmount>              90.900000</GrossAmount>
+          <TaxesOutputs>
+            <Tax>
+              <TaxTypeCode>01</TaxTypeCode>
+              <TaxRate>              21.00</TaxRate>
+              <TaxableBase>
+                <TotalAmount>              90.90</TotalAmount>
+              </TaxableBase>
+              <TaxAmount>
+                <TotalAmount>              19.09</TotalAmount>
+              </TaxAmount>
+            </Tax>
+          </TaxesOutputs>
+          <AdditionalLineItemInformation>Prueba observaciones en la línea de la factura</AdditionalLineItemInformation>
+          <ArticleCode>37063</ArticleCode>
+        </InvoiceLine>
+        <InvoiceLine>
+          <ItemDescription>PANTALLA PRINCIPAL</ItemDescription>
+          <Quantity>              10.000</Quantity>
+          <UnitOfMeasure>01</UnitOfMeasure>
+          <UnitPriceWithoutTax>              16.830000</UnitPriceWithoutTax>
+          <TotalCost>             168.300000</TotalCost>
+          <DiscountsAndRebates>
+            <Discount>
+              <DiscountReason>DESC.AGEN.1234567890</DiscountReason>
+              <DiscountAmount>              16.800000</DiscountAmount>
+            </Discount>
+          </DiscountsAndRebates>
+          <GrossAmount>             151.500000</GrossAmount>
+          <TaxesOutputs>
+            <Tax>
+              <TaxTypeCode>01</TaxTypeCode>
+              <TaxRate>              10.00</TaxRate>
+              <TaxableBase>
+                <TotalAmount>             151.50</TotalAmount>
+              </TaxableBase>
+              <TaxAmount>
+                <TotalAmount>              15.15</TotalAmount>
+              </TaxAmount>
+            </Tax>
+          </TaxesOutputs>
+          <ArticleCode>1234</ArticleCode>
+        </InvoiceLine>
+        <InvoiceLine>
+          <ItemDescription>FILETE POLLO FRESCO</ItemDescription>
+          <Quantity>             100.000</Quantity>
+          <UnitOfMeasure>03</UnitOfMeasure>
+          <UnitPriceWithoutTax>              12.000000</UnitPriceWithoutTax>
+          <TotalCost>            1200.000000</TotalCost>
+          <GrossAmount>            1200.000000</GrossAmount>
+          <TaxesOutputs>
+            <Tax>
+              <TaxTypeCode>01</TaxTypeCode>
+              <TaxRate>              10.00</TaxRate>
+              <TaxableBase>
+                <TotalAmount>            1200.00</TotalAmount>
+              </TaxableBase>
+              <TaxAmount>
+                <TotalAmount>             120.00</TotalAmount>
+              </TaxAmount>
+            </Tax>
+          </TaxesOutputs>
+          <ArticleCode>0501516</ArticleCode>
+        </InvoiceLine>
+      </Items>
+      <PaymentDetails>
+        <Installment>
+          <InstallmentDueDate>2015-11-05</InstallmentDueDate>
+          <InstallmentAmount>             542.71</InstallmentAmount>
+          <PaymentMeans>09</PaymentMeans>
+          <PaymentReconciliationReference>163-FV</PaymentReconciliationReference>
+          <AccountToBeDebited>
+            <IBAN>ES0000000000000000000000</IBAN>
+          </AccountToBeDebited>
+        </Installment>
+        <Installment>
+          <InstallmentDueDate>2015-12-05</InstallmentDueDate>
+          <InstallmentAmount>             542.71</InstallmentAmount>
+          <PaymentMeans>09</PaymentMeans>
+          <PaymentReconciliationReference>163-FV</PaymentReconciliationReference>
+          <AccountToBeDebited>
+            <IBAN>ES0000000000000000000000</IBAN>
+          </AccountToBeDebited>
+        </Installment>
+        <Installment>
+          <InstallmentDueDate>2016-01-04</InstallmentDueDate>
+          <InstallmentAmount>             559.16</InstallmentAmount>
+          <PaymentMeans>09</PaymentMeans>
+          <PaymentReconciliationReference>163-FV</PaymentReconciliationReference>
+          <AccountToBeDebited>
+            <IBAN>ES0000000000000000000000</IBAN>
+          </AccountToBeDebited>
+        </Installment>
+      </PaymentDetails>
+      <AdditionalData>
+        <RelatedInvoice>163-FV</RelatedInvoice>
+        <InvoiceAdditionalInformation>Prueba de Observaciones de Cabecera en una Factura.</InvoiceAdditionalInformation>
+      </AdditionalData>
+    </Invoice>
+  </Invoices>
+</m:Facturae>

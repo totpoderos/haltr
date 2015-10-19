@@ -385,7 +385,7 @@ class Invoice < ActiveRecord::Base
   end
 
   def charge_amount=(value)
-    if value =~ /^[0-9,.']*$/
+    if value =~ /^[0-9,.']*$/ or value.is_a? Numeric
       value = Money.parse(value)
       write_attribute :charge_amount_in_cents, value.cents
     else
@@ -544,8 +544,6 @@ _INV
     total_gross      = Haltr::Utils.get_xpath(doc,xpaths[:invoice_totalgross])
     discount_text    = Haltr::Utils.get_xpath(doc,xpaths[:discount_text])
     extra_info       = Haltr::Utils.get_xpath(doc,xpaths[:extra_info])
-    charge           = Haltr::Utils.get_xpath(doc,xpaths[:charge])
-    charge_reason    = Haltr::Utils.get_xpath(doc,xpaths[:charge_reason])
     accounting_cost  = Haltr::Utils.get_xpath(doc,xpaths[:accounting_cost])
     payments_on_account = Haltr::Utils.get_xpath(doc,xpaths[:payments_on_account]) || 0
     amend_of         = Haltr::Utils.get_xpath(doc,xpaths[:amend_of])
@@ -788,6 +786,15 @@ _INV
       discount_percent = discount_percent.split.collect {|a| Haltr::Utils.float_parse(a) }.sum
     end
 
+    # charges
+    charge = 0
+    charge_reason = []
+    doc.xpath(xpaths[:charges]).each do |ch|
+      charge += Haltr::Utils.float_parse(Haltr::Utils.get_xpath(ch,xpaths[:charge]))
+      charge_reason << Haltr::Utils.get_xpath(ch,xpaths[:charge_reason])
+    end
+    charge_reason = charge_reason.join('. ')
+
     invoice.assign_attributes(
       :number           => invoice_number,
       :series_code      => invoice_series,
@@ -926,12 +933,15 @@ _INV
 
       # line_charges
       line_charges = line.xpath(xpaths[:line_charges])
-      if line_charges.size > 1
-        raise "too many charges per line! (#{line_charges.size})"
-      elsif line_charges.size == 1
-        il.charge = Haltr::Utils.get_xpath(line_charges.first,xpaths[:line_charge])
-        il.charge_reason = Haltr::Utils.get_xpath(line_charges.first,xpaths[:line_charge_reason])
+      il_charge = 0
+      il_charge_reason = []
+      line_charges.each do |line_charge|
+        il_charge += Haltr::Utils.float_parse(Haltr::Utils.get_xpath(line_charge,xpaths[:charge]))
+        il_charge_reason << Haltr::Utils.get_xpath(line_charge,xpaths[:charge_reason])
       end
+      il.charge = il_charge
+      il.charge_reason = il_charge_reason.join('. ')
+
       line_file_reference ||= Haltr::Utils.get_xpath(line,xpaths[:file_reference])
       line_r_contract_reference ||= Haltr::Utils.get_xpath(line,xpaths[:r_contract_reference])
       invoice.invoice_lines << il

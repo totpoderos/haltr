@@ -630,7 +630,18 @@ class InvoiceTest < ActiveSupport::TestCase
     assert_equal 10, il.discount_percent
     assert_equal 10.10, il.discount_amount
     assert_equal 242.40, invoice.gross_subtotal.dollars
-    assert_equal BigDecimal.new('14.42').to_s, invoice.discount_amount.dollars.to_s
+    assert_equal 14.42, invoice.discount_amount.dollars
+  end
+
+  # import invoice_facturae32_issued11.xml
+  test 'when importing invoice with >1 charges, add them' do
+    file    = File.new(File.join(File.dirname(__FILE__),'..','fixtures','documents','invoice_facturae32_issued11.xml'))
+    invoice = Invoice.create_from_xml(file,User.find_by_login('jsmith'),"1234",'uploaded',User.current.name)
+    assert_equal 129.13, invoice.charge_amount.dollars
+    assert_equal 'TRANSPORTES. RECARGO FINANCIERO', invoice.charge_reason
+    il = invoice.invoice_lines.first
+    assert_equal 22.00, il.charge
+    assert_equal 'carrec1 linia1. carrec2 linia1', il.charge_reason
   end
 
 end
