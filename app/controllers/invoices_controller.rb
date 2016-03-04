@@ -286,7 +286,10 @@ class InvoicesController < ApplicationController
     end
 
     # prevent duplicate invoices #5433 #5891
-    validate = (params[:validate] != 'false' or !@project.invoices.find_by_number(@invoice.number).nil?)
+    validate = params[:validate] != 'false'
+    if !validate and !invoice.valid? and invoice.errors.has_key?(:number)
+      validate = true
+    end
     if @invoice.save(validate: validate)
       if @to_amend and params[:amend_type] == 'total'
         @to_amend.save(validate: false)
@@ -1235,7 +1238,7 @@ class InvoicesController < ApplicationController
 
   def find_invoice_by_number
     @project = User.current.project
-    @invoice = @project.invoices.find_by_number(params[:number])
+    @invoice = @project.invoices.find_last_by_number(params[:number])
     if @invoice.nil?
       respond_to do |format|
         format.html {
