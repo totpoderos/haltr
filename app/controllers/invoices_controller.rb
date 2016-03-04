@@ -729,8 +729,9 @@ class InvoicesController < ApplicationController
     end
     if company
       project = company.project
-      number = params[:num]
-      invoice = IssuedInvoice.where(["number = ? AND project_id = ?",number,project.id]).first if project
+      query = IssuedInvoice.where(number: params[:num], project_id: project)
+      query = query.where(date: params[:date]) if params[:date]
+      invoice = query.last if project
     end
     if invoice.nil?
       render_404
