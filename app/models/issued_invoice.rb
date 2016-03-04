@@ -125,7 +125,11 @@ class IssuedInvoice < InvoiceDocument
       query = query.where("YEAR(date) = #{date.year}") unless date.nil?
       query = query.where("id != #{id}") unless new_record?
       if query.any?
-        errors.add(:number, "ja s'està utilitzant dins d'aquest any")
+        if date.nil?
+          errors.add(:number, :taken)
+        else
+          errors.add(:number, l(:number_taken_in_year, year: date.year))
+        end
       end
     end
   end
